@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Globalization;
 
-namespace Wox.Plugin.ChangeCase
+namespace Wox.Plugin.ToggleCase
 {
     public class Main : IPlugin
     {
@@ -15,12 +16,19 @@ namespace Wox.Plugin.ChangeCase
             string input = "";
             foreach (string param in keyword)
             {
-                   input += " " + param;
+                input += " " + param;
             }
 
-            String title = input.ToLower();
+            String title;
+            TextInfo convertCase = new CultureInfo("en-US", false).TextInfo;
+            // Lowercase
+            title = convertCase.ToLower(input);
             results.Add(Result(title, "Convert to Lowercase", "Images\\lowercase.png", Action(title)));
-            title = input.ToUpper();
+            // Titlecase
+            title = convertCase.ToTitleCase(input);
+            results.Add(Result(title, "Convert to Titlecase", "Images\\titlecase.png", Action(title)));
+            // Uppercase
+            title = convertCase.ToUpper(input);
             results.Add(Result(title, "Convert to Uppercase", "Images\\uppercase.png", Action(title)));
 
             return results;
@@ -42,7 +50,10 @@ namespace Wox.Plugin.ChangeCase
         {
             return e =>
             {
-                CopyToClipboard(text);
+                if (!String.IsNullOrEmpty(text))
+                {
+                    CopyToClipboard(text);
+                }
 
                 // return false to tell Wox don't hide query window, otherwise Wox will hide it automatically
                 return false;
@@ -52,7 +63,7 @@ namespace Wox.Plugin.ChangeCase
         // Copy the text entered to the Clipboard
         public static void CopyToClipboard(String text)
         {
-            Clipboard.SetText(text);
+            Clipboard.SetText(text.TrimStart());
         }
     }
 }

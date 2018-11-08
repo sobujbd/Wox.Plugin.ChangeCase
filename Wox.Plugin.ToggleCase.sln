@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wox.Plugin.ChangeCase", "Wox.Plugin.ChangeCase\Wox.Plugin.ChangeCase.csproj", "{46EA7DD7-3E56-4E1F-8616-1A451496BC59}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wox.Plugin.ToggleCase", "Wox.Plugin.ToggleCase\Wox.Plugin.ToggleCase.csproj", "{46EA7DD7-3E56-4E1F-8616-1A451496BC59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1F0A624-BA87-41DC-8A71-5B7E326364E2}
 	EndGlobalSection
 EndGlobal

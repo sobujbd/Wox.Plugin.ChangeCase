@@ -1,0 +1,12 @@
+{
+  "ID": "TC7Q96W4MC72FMLIXGFJSGC3827Z2HVF",
+  "ActionKeyword": "tcase",
+  "Name": "ToggleCase",
+  "Description": "Toggle text case to lowercase, uppercase, title/capitalized case.",
+  "Author": "shahisha, sobujbd",
+  "Version": "1.0.2",
+  "Language": "csharp",
+  "Website": "https://github.com/sobujbd/Wox.Plugin.ToggleCase",
+  "ExecuteFileName": "Wox.Plugin.ToggleCase.dll",
+  "IcoPath": "Images/icon.png"
+}
